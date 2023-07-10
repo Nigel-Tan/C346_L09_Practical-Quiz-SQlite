@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
                 DBHelper dbh = new DBHelper(MainActivity.this);
                 dbh.insertSchool(noStudents, schName);
                 btnRetrieve.performClick();
+                dbh.close();
             }
         });
 
@@ -52,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
                 al.clear();
                 al.addAll(dbh.getSchools());
                 aa.notifyDataSetChanged();
+                dbh.close();
             }
         });
     }
